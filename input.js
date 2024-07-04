@@ -14,25 +14,29 @@ const setupInput = function (conn) {
 
 // The handleUserInput function specifies what happens when "data" is received from stdin... in other words, what happens when a particular key is pressed on the keyboard input.
 const handleUserInput = function (key, conn) {
-  if (key === "\u0003") {
-    process.exit();
-  }
+  switch (key) {
+    case "\u0003":
+      process.exit();
 
-  if (key === "w") {
-    conn.write("Move: up");
+    case "w":
+      conn.write("Move: up");
+      break;
+    case "a":
+      conn.write("Move: left");
+      break;
+    case "s":
+      conn.write("Move: down");
+      break;
+    case "d":
+      conn.write("Move: right");
+      break;
+    case "9":
+      conn.write("Say: Ow!")
+      break;
+      case "0":
+      conn.write("Say: No!")
+      break;
   }
-
-  if (key === "a") {
-    conn.write("Move: left");
-  }
-
-  if (key === "s") {
-    conn.write("Move: down");
-  }
-
-  if (key === "d") {
-    conn.write("Move: right");
-  }
-};
+}
 
 module.exports = setupInput;
