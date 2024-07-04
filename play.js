@@ -13,6 +13,7 @@ const setupInput = function () {
   return stdin;   // return the stdin object so we can use it elsewhere in the program
 };
 
+// The handleUserInput function specifies what happens when "data" is received from stdin... in other words, what happens when a particular key is pressed on the keyboard input.
 const handleUserInput = function (key) {
   if (key === "\u0003") {
     process.exit();
