@@ -21,7 +21,13 @@ const connect = function () {
 
     conn.on("connect", () => {
       conn.write("Name: SNK");
+      setInterval(() => {
+       // conn.write("Move: up");
+      }, 50);
     });
+    
+
+
 
   return conn;
 };
